@@ -2,9 +2,7 @@ const Sequelize = require('sequelize');
 
 module.exports = function (app) {
   const connectionString = app.get('mysql');
-  const sequelize = new Sequelize("poc", "root", "", {
-    host: "localhost",
-    dialect: 'mysql',
+  const sequelize = new Sequelize(connectionString, {
     logging: false,
     operatorsAliases: false,
     define: {
